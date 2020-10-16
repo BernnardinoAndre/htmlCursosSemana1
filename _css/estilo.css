@@ -1,0 +1,333 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/css?family=Titilium+Web);
+@font-face {
+  font-family: 'fonteLogo';
+  src: url("../_fonts/bubblegum-sans-regular.otf");
+}
+
+/*body{
+<!-- background-color: rgba(255, 0, 0, 0.5);
+background-color: hsla(360, 100%, 100%, 0.5);
+color: rgba(0, 0, 0, 0.5 ) ;-->
+
+position absolut define a posicoa independente do objeto container no relativo segue dentor do container.
+}*/
+
+/*TRATAMENTO DE IMAGENS COM LEGENDA*/
+/*
+*{
+  box-sizing: border-box;
+}*/ /*Ouvi dizer que é saudável colocar border-box em tudo logo de inicio.*/
+
+body{
+
+  background-color: #dddddd;
+  color: rgba(0,0,0,1);
+  font-family: Arial, sans-serif  ;
+}
+
+div#interface{
+  margin: -20px auto -500px auto;
+  background-color: white;
+  box-shadow: 1px 1px 4px rgba(0,0,0,.5);
+  padding: 20px;
+  width: 1050px;
+  height: 100%;
+}
+  header#cabecalho img#icone {
+  position: absolute;
+  left: 955px;
+  top: 105px;
+}
+
+header#cabecalho {
+  border-bottom: 1px rgba(0, 0, 0,.7 ) solid;
+  padding: 50px 0px 0px 0px;
+ 
+  height: 200px;
+
+  background: url("../_imagens/rsz_rapidex.png"  ) no-repeat 0px 140px;/*sem repetição e desloc X e Y*/
+
+}
+
+header#cabecalho h1 {
+  font-family: 'fonteLogo', sans-serif;
+  font-size: 2em;
+  color: #606060;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.7);
+  margin-bottom: 0px;
+  padding: 0px;
+
+  margin-top: 0px;
+
+
+}
+header#cabecalho h2 {
+  font-family: 'Titilium Web', sans-serif;
+  color: #888888;
+  font-size: 15pt;
+  margin-top:0px;
+  padding: 0px;
+}
+p {
+  text-align: justify;
+  text-indent: 50px;
+}
+a {
+  color: #606060;
+  text-decoration: none;
+
+}
+
+a:hover{
+  color:#16181b;
+  text-decoration: underline;
+
+
+}
+
+figure.foto-legenda {
+  border: 8px solid white;
+  box-shadow: 1px 1px 4px black;
+  position: relative;
+  box-sizing: border-box;
+  width: 520px;
+  margin: 0px 0px 30px 0px;
+
+
+  /*Position: relative: deixa o figure nesse caso relativo aonde foi colocado no codigo html, ou seja transformando-o em um container*/
+
+}
+
+figure.foto-legenda img {
+  width: 100%;
+  height: 100%;
+
+}
+
+
+figure.foto-legenda figcaption {
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  background-color: rgba(0, 0, 0,.4);
+  color: white;
+  width: 100%;
+  height: 98.8%;
+  font-size: 15pt;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: opacity 1s;
+
+  /*posittion: absolute: deixa o figcaption absoluto, ou seja em posicao absoluta dentro do seu container pai figure*/
+  /*box-sizing: border-box: cria um box dentro da borda nao deixa ela escapar da imagem*/
+}
+
+figure.foto-legenda figcaption:hover{
+  opacity: 1;
+
+}
+
+/*FORMATAÇÃO MENU*/
+nav#menu {
+  display: block; /*Um bloco pode flutuar pela tela*/
+  display: relative;
+  margin: -20px auto -500px auto;
+}
+
+nav#menu ul {
+
+  list-style: none;
+  text-transform: uppercase;
+  position: absolute;
+  left: 350px;
+  top: -2px
+  /* absolut tem uma posição absoluta dentro do site, relative fica preso ao container que nesse caso seria o navMenu*/
+}
+nav#menu li{
+
+  display: inline-block;
+  position: relative;
+}
+
+nav#menu a:link, nav#menu a:visited {
+  background-color: #dddddd;
+  color: black;
+  padding: 10px;
+  font-weight: bold;
+  margin-left:2.5px;
+  margin-right:2.5px ;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 10px;
+  box-shadow: 0px 9px 1px #999;/*0px deloc(Horiz), 9px deloc(Vert), 1 px espalhamento e cor. */
+  /*SITE EXPRESSPREFIXR É UM CROSS BROWSER QUE LHE DA OS WEBKITS P FUNCIONAR EM TODOS NAVEGADORES*/
+  /*
+-webkit-transition: background-color 1s;
+  -moz-transition: background-color 1s;
+  -ms-transition: background-color 1s;
+  -o-transition: background-color 1s;
+  -webkit-transition: color 0.5s;*/
+
+  transition-duration: 0.4s;
+}
+
+nav#menu a:active {
+  background-color: #3e8e41;
+  box-shadow: 0px 5px 1px #666;
+  transform: translateY(4px);
+}
+
+
+nav#menu h1{
+  display: none;
+
+}
+
+nav#menu a:hover{
+  background-color: rgb(124,123,136);
+  color: white;
+}
+
+nav#menu a{
+  color: black;
+  position: relative;
+
+}
+
+/*FORMATACAO DO CONTEUDO SECTION, ASIDE E FOOTER*/
+
+section#corpo {
+  display: block;
+  width: 520px;
+  float: left;
+  border-right: 1px solid #606060;
+  padding-right: 15px;
+
+}
+
+article#noticia-principal h2{
+  background-color: #dddddd;
+  margin: 20px 0px 0px 0px;
+  color: #606060;
+  padding: 5px 0px 5px 10px;
+  font-size: 12pt;
+}
+
+header#cabecalho-artigo h1{
+  color: #606060;
+  font-size: 20pt;
+  font-family: 'fonteLogo', sans-serif;
+  margin: 0px;
+}
+
+header#cabecalho-artigo h2{
+  font-size: 13pt;
+  background-color: #ffffff;
+  color: #cecece;
+  margin:0px;
+  padding:0px;
+}
+
+header#cabecalho-artigo h3{
+  font-size: 15pt;
+  background-color: transparent;
+  color: #888888;
+  margin:10px 0px 25px 0px;
+  padding:0px;
+}
+
+header#cabecalho-artigo span h3{
+  font-size: 10pt;
+  background-color: transparent;
+  color: #606060;
+  text-align: right;
+  margin-top: 20px;
+}
+
+table#tabelaSpec{
+  border: 1px solid #606060;
+  border-spacing: 0px;
+
+}
+table#tabelaSpec td{
+  border: 1.2px solid #606060;
+  text-align: center;
+  padding: 10px;
+  vertical-align: middle;
+
+}
+table#tabelaSpec td.esquerda{
+  font-family: 'Arial', sans-serif;
+  color: white;
+  background-color: #606060;
+  text-align: right;
+  vertical-align: top;
+  font-weight: bold;
+}
+table#tabelaSpec td.direita{
+  font-family: 'Arial', sans-serif;
+  color: black;
+  background-color: #cecece;
+  text-align: left;
+}
+table#tabelaSpec caption{
+  font-family: 'Arial';
+  color: #888888;
+  font-size: 11pt;
+  font-weight: bolder;
+}
+
+table#tabelaSpec caption span{
+  float: right;
+  color: black;
+  font-size: 8pt;
+  margin-top: 7px;
+}
+
+
+aside#lateral{
+  display: block;
+  width: 350px;
+  float: right;
+  background-color: #dddddd;
+  padding: 10px;
+  margin-top: 20px;
+  box-shadow: 1px 1px 4px rgba(0,0,0,.5) ;
+  /*   position: relative;  */
+
+}
+
+aside#lateral h1{
+  font-family: 'fonteLogo', sans-serif;
+  color: #606060;
+  font-size: 20pt;
+}
+aside#lateral h2{
+  background-color: #606060;
+  margin: 50px 0px 10px 0px;
+  color: white;
+  padding: 5px 0px 5px 10px;
+  font-size: 12pt;
+ font-weight: bolder;
+
+}
+
+video#how-it-feels {
+  width: 100%;
+  box-sizing: border-box;
+
+}
+
+
+footer#rodape{
+  clear: both;
+  border-top: 1px solid #606060;
+}
+footer#rodape p {
+  text-align: center;
+  text-decoration: none;
+}
+footer#rodape a {
+}
